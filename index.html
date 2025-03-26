@@ -5,20 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ReciYeepz</title>
   <style>
+    /* Enable smooth scrolling */
+    html {
+      scroll-behavior: smooth;
+    }
     /* Global Styles */
     body {
       font-family: Tahoma, sans-serif;
       font-weight: bold;
       margin: 0;
       padding: 0;
+      color: #333;
       position: relative;
       background: url('social-links-art-key.jpg-modified.png') no-repeat center center fixed;
       background-size: cover;
-      color: #333;
     }
     /* Blurred Background Overlay */
     body::before {
-      content: "";
+      content: '';
       position: absolute;
       top: 0;
       left: 0;
@@ -28,6 +32,24 @@
       background-size: cover;
       filter: blur(5px);
       z-index: -1;
+    }
+    /* Splash Screen */
+    #splash {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      animation: fadeOut 2s ease-out 3s forwards;
+    }
+    @keyframes fadeOut {
+      0% { opacity: 1; }
+      100% { opacity: 0; pointer-events: none; }
     }
     /* Header */
     header {
@@ -51,8 +73,7 @@
       border-collapse: collapse;
       background: #fff;
     }
-    th, 
-    td {
+    th, td {
       padding: 15px;
       text-align: left;
       border-bottom: 1px solid #ddd;
@@ -67,32 +88,21 @@
     tr:hover {
       background-color: #f0f0f0;
     }
-    /* Recipe Section Styles */
-    section.recipe {
-      width: 80%;
-      margin: 20px auto;
-      background: rgba(255, 255, 255, 0.9);
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    }
-    section.recipe h2 {
-      font-size: 1.5rem;
-      margin-bottom: 10px;
-    }
-    section.recipe p {
-      margin: 5px 0;
-    }
   </style>
 </head>
 <body>
-  <!-- Header with Logo and Title -->
+  <!-- Splash Screen with Centered Logo -->
+  <div id="splash">
+    <img src="logo.png" alt="Logo" style="max-width: 400px;">
+  </div>
+
+  <!-- Main Content -->
   <header>
-    <img src="logo.png" alt="Website Logo" />
+    <img src="logo.png" alt="Website Logo">
     <h1>Recipes for Yeeps: Hide and Seek</h1>
   </header>
 
-  <!-- Combined Recipes Table -->
+  <!-- Complete Recipes Table (All Recipes in One Table) -->
   <table>
     <tr>
       <th>Result</th>
@@ -186,79 +196,5 @@
       <td>Bread</td>
     </tr>
   </table>
-
-  <!-- Individual Detailed Recipe Sections -->
-
-  <section class="recipe">
-    <h2>Batter</h2>
-    <p><strong>Appliance:</strong> Pot</p>
-    <p><strong>Ingredients:</strong> Flour, Milk, Egg</p>
-  </section>
-
-  <section class="recipe">
-    <h2>Breaded Chicken</h2>
-    <p><strong>Appliance:</strong> Pot</p>
-    <p><strong>Ingredients:</strong> Batter, Raw Chicken</p>
-  </section>
-
-  <section class="recipe">
-    <h2>Beef Stew</h2>
-    <p><strong>Appliance:</strong> Pot</p>
-    <p><strong>Ingredients:</strong> Potato, Steak</p>
-  </section>
-
-  <section class="recipe">
-    <h2>Burger</h2>
-    <p><strong>Appliance:</strong> Pot</p>
-    <p><strong>Ingredients:</strong> Bread, Steak, Lettuce</p>
-  </section>
-
-  <section class="recipe">
-    <h2>Cheese</h2>
-    <p><strong>Appliance:</strong> Pot</p>
-    <p><strong>Ingredients:</strong> Milk</p>
-  </section>
-
-  <section class="recipe">
-    <h2>Chopped Fish</h2>
-    <p><strong>Appliance:</strong> Pot</p>
-    <p><strong>Ingredients:</strong> Fish</p>
-  </section>
-
-  <section class="recipe">
-    <h2>Ice Cream</h2>
-    <p><strong>Appliance:</strong> Pot</p>
-    <p><strong>Ingredients:</strong> Milk, Sugar</p>
-  </section>
-
-  <section class="recipe">
-    <h2>Pasta</h2>
-    <p><strong>Appliance:</strong> Pot</p>
-    <p><strong>Ingredients:</strong> Flour, Milk, Egg</p>
-  </section>
-
-  <section class="recipe">
-    <h2>Pasta Bowl</h2>
-    <p><strong>Appliance:</strong> Pot</p>
-    <p><strong>Ingredients:</strong> Pasta, Steak</p>
-  </section>
-
-  <section class="recipe">
-    <h2>Pizza</h2>
-    <p><strong>Appliance:</strong> Oven</p>
-    <p><strong>Ingredients:</strong> Flour, Cheese, Tomato</p>
-  </section>
-
-  <section class="recipe">
-    <h2>Chicken Noodle Soup</h2>
-    <p><strong>Appliance:</strong> Pot</p>
-    <p><strong>Ingredients:</strong> Noodles, Raw Chicken</p>
-  </section>
-
-  <section class="recipe">
-    <h2>French Toast</h2>
-    <p><strong>Appliance:</strong> Pot</p>
-    <p><strong>Ingredients:</strong> Syrup, Egg, Bread</p>
-  </section>
 </body>
 </html>
